@@ -20,8 +20,7 @@
 
         // LISTA DE PETS
 
-        var pets = [
-            {
+        var pets = [{
                 nome: "Gato",
                 idade: 8,
                 raca: "Vira-Lata",
@@ -51,7 +50,7 @@
             gato = {
                 nome: "miau",
                 idade: 8,
-                raca: "Vira-Lata",
+                raca: "gato",
                 peso: 30,
                 vacinado: false,
                 cor: "Marron",
@@ -81,12 +80,13 @@
             //aqui temos a primeira funcao 
 
         }
+
         function vacinar(cachorro) {
             //Implementando a funcao
             if (cachorro.vacinado) {
                 console.log("Esse cachorro ja esta vacinado")
-            } else {
-            } cachorro.vacinado = true;
+            } else {}
+            cachorro.vacinado = true;
             console.log("Vacina aplicada com sucesso")
         }
 
@@ -111,36 +111,48 @@
 
             return console.log("novo pet adcionado com sucesso =D")
         }
+        const exibirPets = () => {
+            pets.forEach((valor, index) => {
+                console.log("====================================================");
+                console.log("Nome do pet: " + valor.nome);
+                console.log("Raca do pet " + valor.raca);
+                console.log(valor.vacinado ? " Esse pet ja esta vacinado" :
+                    "esse pedt ainda nao foi vacinado");
 
-
-
-
-
-        const mostraPet= function() {
-            pets.forEach(function (pet, index) {
-                console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
-                console.log("+ nome do pet: " + pets[0].nome);
-                console.log("+ raca do pet: " + pets[0].raca);
-                console.log("+ cor do pet: " +  pets[0].cor);
-                console.log("+ idade do pet: "+ pets[0].idade);
-                console.log("+ peso do pet: " + pets[0].peso);
-                console.log("+ " + pets[0].vacinado ? "Esse pet esta vacinado" : "Esse pet ainda nao esta vacinado");
-                console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
-            })
+            });
         }
 
-////////////////////////////////////////////////////////////////////
+        exibirPets();
+
+        /// const mostraPet= function() {
+        ///     pets.forEach(function (pet, index) {
+        ///         console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
+        ///         console.log("+ nome do pet: " + pets[0].nome);
+        ///         console.log("+ raca do pet: " + pets[0].raca);
+        ///         console.log("+ cor do pet: " +  pets[0].cor);
+        ///         console.log("+ idade do pet: "+ pets[0].idade);
+        ///         console.log("+ peso do pet: " + pets[0].peso);
+        ///         console.log("+ " + pets[0].vacinado ? "Esse pet esta vacinado" : "Esse pet ainda nao esta vacinado");
+        ///         console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
+        ///     })
+        /// }
+
+        ////////////////////////////////////////////////////////////////////
 
 
+        const filtrarPetsGatos = () => {
+            let listaPetsGato = pets.filter(function (pets, index) {
+                return pets.raca == "gato";
+            })
+            return listaPetsGato;
+        }
 
-
-
-
-
-
-
-
-
+const vacinarGeral =()=>{
+return pets.map(function(pets,index){
+            pets.vacinado = true;
+            return pets
+})
+}
 
 
 
@@ -151,15 +163,15 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
