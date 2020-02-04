@@ -13,9 +13,56 @@
 
 <body>
     <script>
-        console.log("********************* PET SHOP DA RD*********************")
+        const EMPRESA = "************************** PETSHOP DA RD  *****************************"
+        console.log(EMPRESA);
+
         // NOME, idade, peso, vacinado, cor, raca, dono, serviços
 
+        // LISTA DE PETS
+
+        var pets = [
+            {
+                nome: "Gato",
+                idade: 8,
+                raca: "Vira-Lata",
+                peso: 30,
+                vacinado: false,
+                cor: "Marron",
+                servico: ["banho", "vacina"],
+                dono: {
+                    nome: null,
+                    idade: null
+                }
+
+            },
+            jacare = {
+                nome: "jacarai",
+                idade: 8,
+                raca: "Vira-Lata",
+                peso: 30,
+                vacinado: false,
+                cor: "Marron",
+                servico: ["banho", "vacina"],
+                dono: {
+                    nome: null,
+                    idade: null
+                }
+            },
+            gato = {
+                nome: "miau",
+                idade: 8,
+                raca: "Vira-Lata",
+                peso: 30,
+                vacinado: false,
+                cor: "Marron",
+                servico: ["banho", "vacina"],
+                dono: {
+                    nome: null,
+                    idade: null
+                }
+            }
+
+        ]
 
 
         var cachorro = {
@@ -25,24 +72,80 @@
             peso: 30,
             vacinado: false,
             cor: "Marron",
-            Servico: ["banho", "vacina"],
+            servico: ["banho", "vacina"],
             dono: {
-                nome: "Vinicius",
+                nome: null,
                 idade: null
             }
+
+            //aqui temos a primeira funcao 
 
         }
         function vacinar(cachorro) {
             //Implementando a funcao
-            if (cachorro.vacinado == true) {
+            if (cachorro.vacinado) {
                 console.log("Esse cachorro ja esta vacinado")
             } else {
-            }cachorro.vacinado=true;
+            } cachorro.vacinado = true;
             console.log("Vacina aplicada com sucesso")
         }
 
+        // aqui temos a proxima funcao
+
+
+        function adcionarPet(nome, idade, raca, peso, vacinado, cor, servico, dono) {
+            var lista = {
+                nome,
+                idade,
+                peso,
+                raca,
+                cor,
+                servico,
+                vacinado,
+                dono: {
+                    nome: null,
+                    idade: null
+                }
+            }
+            pets.push(lista)
+
+            return console.log("novo pet adcionado com sucesso =D")
+        }
+
+
+
+
+
+        const mostraPet= function() {
+            pets.forEach(function (pet, index) {
+                console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
+                console.log("+ nome do pet: " + pets[0].nome);
+                console.log("+ raca do pet: " + pets[0].raca);
+                console.log("+ cor do pet: " +  pets[0].cor);
+                console.log("+ idade do pet: "+ pets[0].idade);
+                console.log("+ peso do pet: " + pets[0].peso);
+                console.log("+ " + pets[0].vacinado ? "Esse pet esta vacinado" : "Esse pet ainda nao esta vacinado");
+                console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
+            })
+        }
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
+
 
 
     <!-- Optional JavaScript -->
@@ -50,7 +153,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    </script>>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
